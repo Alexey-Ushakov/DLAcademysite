@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> {{ profile.user.username }}</h1>
+    <h2> About: {{ profile.about }}</h2>
+    <img class="avatar" src="{{ profile.avatar.url }}" alt="image">
+    {% if user.id == profile.user.id %}
+    <a href="{% url 'advito:edit_profile' user_id=profile.user.id %}">Обновить профиль</a>
+    {% else %}
+    <h2>Круто что зашли сюда</h2>
+    {% endif %}
+
+</body>
+</html>

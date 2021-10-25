@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Регистрация</h3>
+    <hr>
+    {% if not registered %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Зарегестрироваться</button>
+    </form>
+    {% else %}
+    <h3> Вы успешно зарегестрированны</h3>
+    <a href="{% url 'advito:login' %}">Авторизируйтесь</a>
+    {% endif %}
+</body>
+
+</html>

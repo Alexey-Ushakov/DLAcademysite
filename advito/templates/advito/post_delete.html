@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if post.author == user %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete post</button>
+    </form>
+    <a href="{% url 'advito:post_detail' post.id %}"> Don`t delete Me </a>
+    {% else %}
+    <h1>Вы не можжете удалить этот пост</h1>
+    {% endif %}
+</body>
+</html>

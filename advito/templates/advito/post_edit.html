@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Обновить пост</button>
+    </form>
+    <a href="{% url 'advito:post_detail' post.id %}"> Удалить пост</a>
+</body>
+</html>
